@@ -12,6 +12,7 @@
 		 <servlet-name>Jersey Web Application</servlet-name>
 		 <url-pattern>/CardDetailService/*</url-pattern>
 		 <url-pattern>/InquiryService/*</url-pattern>
+		 <url-pattern>/RequestService/*</url-pattern>
 	</servlet-mapping>
   
   
