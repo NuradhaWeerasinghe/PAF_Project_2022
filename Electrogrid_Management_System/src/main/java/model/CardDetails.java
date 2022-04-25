@@ -1,10 +1,5 @@
 package model;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 public class CardDetails {
 	public Connection connect() 
@@ -13,9 +8,9 @@ public class CardDetails {
 	 
 	 try 
 	 { 
-		 Class.forName("com.mysql.jdbc.Driver"); 
-		 con= DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/paf_ed","root", ""); //For testing
-		 System.out.print("Successfully connected"); 
+	 Class.forName("com.mysql.jdbc.Driver"); 
+	 con= DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/paf_ed","root", ""); //For testing
+	 System.out.print("Successfully connected"); 
 	 } 
 	 catch(Exception e) 
 	 { 
@@ -24,6 +19,9 @@ public class CardDetails {
 	 
 	 return con; 
 	}
+
+	
+	
 	
 	
 	public String readCardDetails()
@@ -31,8 +29,8 @@ public class CardDetails {
 	 String output = ""; 
 	try
 	 { 
-		 Connection con = connect(); 
-		 if (con == null) 
+	 Connection con = connect(); 
+	 if (con == null) 
 	 { 
 	 return "Error while connecting to the database for reading."; 
 	 } 
@@ -60,19 +58,25 @@ public class CardDetails {
 	 output += "<td>" + expYear + "</td>"; 
 	 output += "<td>" + securityCode + "</td>";
 	 // buttons
-	
+	 output += "<td><input name='btnUpdate' type='button' value='Update'></td>"
+	 + "<td>"
+	 + "<form method='post' action='carddetails.jsp'> "
+	 + "<input name='btnRemove' type='submit' value='Remove'>"
+	 + "<input name='cardDetID' type='hidden'  value='" + cardDetID + "'>" + "</form></td></tr>"; 
 	 } 
-		 con.close(); 
-		 // Complete the html table
-		 output += "</table>"; 
+	 con.close(); 
+	 // Complete the html table
+	 output += "</table>"; 
 	 } 
 	catch (Exception e) 
-	 { 
-		 output = "Error while reading the carddetails."; 
-		 System.err.println(e.getMessage()); 
+ { 
+	 output = "Error while reading the carddetails."; 
+	 System.err.println(e.getMessage()); 
 	 } 
 	return output; 
 	}
+	
+	
 	
 	
 	public String insertCardDetails(String cNo, String eDate, String eMonth, String eYear,String secCode) 
@@ -80,8 +84,8 @@ public class CardDetails {
 	 String output = ""; 
 	 try
 	 { 
-		 Connection con = connect(); 
-		 if (con == null) 
+	 Connection con = connect(); 
+	 if (con == null) 
 	 {return "Error while connecting to the database for inserting."; } 
 	 // create a prepared statement
 	 String query = " insert into carddetails (`cardDetID`,`cardNo`,`expDate`,`expMonth`,`expYear`,`securityCode`) values (?, ?, ?, ?, ?, ?)"; 
@@ -100,11 +104,13 @@ public class CardDetails {
 	 } 
 	 catch (Exception e) 
 	 { 
-		 output = "Error while inserting the item."; 
-		 System.err.println(e.getMessage()); 
+	 output = "Error while inserting the item."; 
+	 System.err.println(e.getMessage()); 
 	 } 
 	 return output; 
 	 } 
+	
+	
 	
 	
 	public String updateCardDetails(String ID, String cNo, String eDate, String eMonth, String eYear,String secCode)
@@ -112,8 +118,8 @@ public class CardDetails {
 		 String output = ""; 
 		 try
 		 { 
-			 Connection con = connect(); 
-			 if (con == null) 
+		 Connection con = connect(); 
+		 if (con == null) 
 		 {return "Error while connecting to the database for updating."; } 
 		 // create a prepared statement
 		 String query = "update carddetails set cardNo=?,expDate=?,expMonth=?,expYear=?,securityCode=? where cardDetID=?"; 
@@ -139,6 +145,8 @@ public class CardDetails {
 		 return output; 
 		 } 
 	
+	
+	
 	public String deleteCardDetails(String cardDetID) 
 	 { 
 	 String output = ""; 
@@ -159,10 +167,9 @@ public class CardDetails {
 	 } 
 	 catch (Exception e) 
 	 { 
-		 output = "Error while deleting the details."; 
-		 System.err.println(e.getMessage()); 
+	 output = "Error while deleting the details."; 
+	 System.err.println(e.getMessage()); 
 	 } 
 	 return output; 
 	 } 
-	
 }

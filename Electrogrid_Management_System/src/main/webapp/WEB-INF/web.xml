@@ -13,6 +13,10 @@
 		 <url-pattern>/CardDetailService/*</url-pattern>
 		 <url-pattern>/InquiryService/*</url-pattern>
 		 <url-pattern>/RequestService/*</url-pattern>
+		 <url-pattern>/UserService/*</url-pattern>
+		 <url-pattern>/NoticeService/*</url-pattern>
+		 <url-pattern>/BillService/*</url-pattern>
+		 <url-pattern>/InvoiceManagementService/*</url-pattern>
 	</servlet-mapping>
   
   
