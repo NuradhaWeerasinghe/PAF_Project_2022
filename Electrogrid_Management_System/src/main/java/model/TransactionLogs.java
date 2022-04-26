@@ -8,9 +8,9 @@ public class TransactionLogs {
 	 
 	 try 
 	 { 
-	 Class.forName("com.mysql.jdbc.Driver"); 
-	 con= DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/paf_ed","root", ""); //For testing
-	 System.out.print("Successfully connected"); 
+		 Class.forName("com.mysql.jdbc.Driver"); 
+		 con= DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/paf_ed","root", ""); //For testing
+		 System.out.print("Successfully connected"); 
 	 } 
 	 catch(Exception e) 
 	 { 
@@ -29,7 +29,7 @@ public class TransactionLogs {
 	 Connection con = connect(); 
 	 if (con == null) 
 	 { 
-	 return "Error while connecting to the database for reading."; 
+		 return "Error while connecting to the database for reading."; 
 	 } 
 	 // Prepare the html table to be displayed
 	 output = "<table border='1'><tr><th>Power Usage</th>" 
@@ -70,7 +70,7 @@ public class TransactionLogs {
 	 output = "Error while reading the bill details."; 
 	 System.err.println(e.getMessage()); 
 	 } 
-	return output; 
+		return output; 
 	}
 	
 	
@@ -123,8 +123,8 @@ public class TransactionLogs {
 	 } 
 	catch (Exception e) 
 	 { 
-	 output = "Error while reading the invoice details."; 
-	 System.err.println(e.getMessage()); 
+		 output = "Error while reading the invoice details."; 
+		 System.err.println(e.getMessage()); 
 	 } 
 	return output; 
 	}
