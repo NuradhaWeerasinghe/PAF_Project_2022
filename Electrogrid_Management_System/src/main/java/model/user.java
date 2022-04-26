@@ -168,7 +168,7 @@ public class user {
 			return output;
 		}
 		//Delete consumer details
-		public String deleteConsumers(String consumer_id)
+		public String deleteConsumer(String consumer_id)
 		{
 			String output = "";
 			
