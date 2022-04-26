@@ -142,9 +142,9 @@ public class Request {
 			// binding values
 			preparedStmt.setString(1, service_Type);
 			preparedStmt.setString(2, desc);
-			preparedStmt.setInt(3, Integer.parseInt(request_id));
-			preparedStmt.setString(4, city);
-			preparedStmt.setString(5, zip_code);
+			preparedStmt.setString(3, city);
+			preparedStmt.setString(4, zip_code);
+			preparedStmt.setInt(5, Integer.parseInt(request_id));
 			
 			// execute the statement
 			preparedStmt.execute();

@@ -149,8 +149,9 @@ public class Inquiry {
 				preparedStmt.setString(3, desc);
 				preparedStmt.setString(4, branch_Code);
 				preparedStmt.setString(5, branch_Name);
-				preparedStmt.setInt(6, Integer.parseInt(inquiry_id));
-				preparedStmt.setString(7, Address);
+				preparedStmt.setString(6, Address);
+				preparedStmt.setInt(7, Integer.parseInt(inquiry_id));
+				
 				
 				// execute the statement
 				preparedStmt.execute();
