@@ -75,7 +75,7 @@ public class UserService {
 		@Path("/consumer")
 		@Consumes(MediaType.APPLICATION_XML)
 		@Produces(MediaType.TEXT_PLAIN)
-		public String deleteInquiries(String consumerData)
+		public String deleteConsumer(String consumerData)
 		{
 			//Convert the input string to an XML document
 			Document doc = Jsoup.parse(consumerData, "", Parser.xmlParser());
@@ -83,7 +83,7 @@ public class UserService {
 			//Read the value from the element <requestID>
 			String consumerID = doc.select("consumer_id").text();
 			
-			String output = userObj.deleteConsumers(consumerID);
+			String output = userObj.deleteConsumer(consumerID);
 			
 			return output;
 		}
@@ -124,7 +124,7 @@ public class UserService {
 			JsonObject producerObject = new JsonParser().parse(producerData).getAsJsonObject();
 			
 			//Read the values from the JSON object
-			String producerId  = producerObject.get("producerId").getAsString();
+			String producerId = producerObject.get("producerId").getAsString();
 			String plantId = producerObject.get("plantId").getAsString();
 			String projectId  = producerObject.get("projectId").getAsString();
 			String firstName = producerObject.get("firstName").getAsString();
