@@ -139,7 +139,7 @@ public class CardDetails {
 		 } 
 		 catch (Exception e) 
 		 { 
-		 output = "Error while updating the details."; 
+		 output = "Error while updating the card details."; 
 		 System.err.println(e.getMessage()); 
 		 } 
 		 return output; 
@@ -167,7 +167,7 @@ public class CardDetails {
 	 } 
 	 catch (Exception e) 
 	 { 
-	 output = "Error while deleting the details."; 
+	 output = "Error while deleting the Card details."; 
 	 System.err.println(e.getMessage()); 
 	 } 
 	 return output; 
