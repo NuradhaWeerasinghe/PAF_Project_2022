@@ -68,7 +68,7 @@ public class Notice {
 					
 				catch (Exception e)
 				{
-					output = "Error while inserting the consumer.";
+					output = "Error while creating the Interuption Notice";
 					System.err.println(e.getMessage());
 				}
 					
@@ -157,12 +157,12 @@ public class Notice {
 					preparedStmt.execute();
 					con.close();
 						
-					output = "Updated successfully";
+					output = "Interruption Notice Updated successfully";
 				}
 					
 				catch (Exception e)
 				{
-					output = "Error while updating the Interruption.";
+					output = "Error while updating the Interruption Notice.";
 					System.err.println(e.getMessage());
 				}
 					
@@ -194,12 +194,12 @@ public class Notice {
 					preparedStmt.execute();
 					con.close();
 					
-					output = "Deleted successfully";
+					output = "Interruption Notice Deleted successfully";
 				}
 				
 				catch (Exception e)
 				{
-					output = "Error while deleting the consumer.";
+					output = "Error while deleting the Interruption Notice.";
 					System.err.println(e.getMessage());
 				}
 				
@@ -239,12 +239,12 @@ public class Notice {
 					preparedStmt.execute();
 					con.close();
 						
-					output = "Inserted successfully";
+					output = "Promotion Notice created successfully";
 				}
 					
 				catch (Exception e)
 				{
-					output = "Error while adding the promotion.";
+					output = "Error while creating the promotion.";
 					System.err.println(e.getMessage());
 				}
 					
@@ -334,12 +334,12 @@ public class Notice {
 					preparedStmt.execute();
 					con.close();
 						
-					output = "Updated successfully";
+					output = "Promotion Notice updated successfully";
 				}
 					
 				catch (Exception e)
 				{
-					output = "Error while updating the promotion.";
+					output = "Error while updating the Promotion Notice.";
 					System.err.println(e.getMessage());
 				}
 					
@@ -371,12 +371,12 @@ public class Notice {
 					preparedStmt.execute();
 					con.close();
 					
-					output = "Deleted successfully";
+					output = "Promotion Notice deleted successfully";
 				}
 				
 				catch (Exception e)
 				{
-					output = "Error while deleting the Promotion.";
+					output = "Error while deleting the Promotion Notice.";
 					System.err.println(e.getMessage());
 				}
 				
